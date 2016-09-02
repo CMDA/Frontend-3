@@ -1,0 +1,33 @@
+{
+  "name": "frontend-3",
+  "version": "1.0.0",
+  "description": "It's a bunch of examples used in our datavisualisation class using d3.js by Mike Bostock",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CMDA/Frontend-3.git"
+  },
+  "keywords": [
+    "cmda",
+    "frontend3",
+    "fed3",
+    "d3",
+    "d3js"
+  ],
+  "author": "Justus Sturkenboom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CMDA/Frontend-3/issues"
+  },
+  "homepage": "https://github.com/CMDA/Frontend-3#readme",
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-inject": "^4.1.0",
+    "run-sequence": "^1.2.1"
+  }
+}

@@ -1,0 +1,28 @@
+header nav ul {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	height: 10vh;
+	border: 1px solid red;
+	color: white;
+	margin: 0; padding: .5em;
+}
+
+header nav ul li {
+	display: block;	
+	height: 4vh;
+	flex-grow: 1;
+	flex-shrink: 0;
+	background: black;
+	margin: 0.5vh;
+	list-style: none;
+}
+
+header nav ul li:nth-of-type(1) {
+	height: 9vh;
+}
+
+header nav ul li:nth-of-type(1),
+header nav ul li:nth-of-type(2n+2) {
+	margin-bottom: .5vh;
+}
