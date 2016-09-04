@@ -1,15 +1,9 @@
 {
+  "private": true,
   "name": "frontend-3",
   "version": "1.0.0",
-  "description": "It's a bunch of examples used in our datavisualisation class using d3.js by Mike Bostock",
-  "main": "gulpfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CMDA/Frontend-3.git"
-  },
+  "description": "Bunch of examples used in our datavisualisation class using d3.js by Mike Bostock",
+  "license": "ISC",
   "keywords": [
     "cmda",
     "frontend3",
@@ -17,12 +11,14 @@
     "d3",
     "d3js"
   ],
-  "author": "Justus Sturkenboom",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/CMDA/Frontend-3/issues"
-  },
+  "repository": "https://github.com/CMDA/Frontend-3",
+  "bugs": "https://github.com/CMDA/Frontend-3/issues",
   "homepage": "https://github.com/CMDA/Frontend-3#readme",
+  "author": "Justus Sturkenboom <justus@ju5tu5.nl>",
+  "contributors": [
+    "Justus Sturkenboom <justus@ju5tu5.nl>",
+    "Titus Wormer <tituswormer@gmail.com>"
+  ],
   "devDependencies": {
     "browser-sync": "^2.13.0",
     "del": "^2.2.0",
