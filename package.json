@@ -20,10 +20,12 @@
     "Titus Wormer <tituswormer@gmail.com>"
   ],
   "devDependencies": {
-    "browser-sync": "^2.13.0",
-    "del": "^2.2.0",
-    "gulp": "^3.9.1",
-    "gulp-inject": "^4.1.0",
-    "run-sequence": "^1.2.1"
+    "budo": "^8.3.0",
+    "hastscript": "^3.0.1",
+    "rehype": "^2.0.0"
+  },
+  "scripts": {
+    "build": "node script/build-index",
+    "start": "budo --dir src --live"
   }
 }
