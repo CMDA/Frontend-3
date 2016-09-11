@@ -15,6 +15,8 @@ git clone https://github.com/CMDA/Frontend-3.git
 
 ## Development
 
+> You need [Node installed](https://nodejs.org) when developing.
+
 After cloning, install dependencies like so:
 
 ```sh
