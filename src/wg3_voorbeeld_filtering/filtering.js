@@ -11,39 +11,47 @@ d3.json('https://spreadsheets.google.com/feeds/list/1kSvyHeiYbjXbDZIvX-rmXzQi-SQ
 	data = cleanGoogleSheetsJSON(data);
 	data = convertValueToNumber(data, 'waarde');
 
+	// Dan nesten op de waarden die we willen plotten
 	var nest = d3.nest()
 		.key(function(d){return d.perioden;})
 		.key(function(d){return d.onderwijssoort;})
 		.entries(data);
 
+	// even checken hoe het er precies uit ziet
 	nest.map(function(d){ console.log(d.values[0].values[1].waarde); })
 
+	// maak een xSchaal op basis van de buitenste nest functie (perioden)
 	var xScale = d3.scale.ordinal()
 			.domain(nest.map(function(d) {return d.key;}))
 			.rangeBands([0, width]);
 
+	// maak een ySchaal op basis van het maximum aantal diploma's
 	var yScale = d3.scale.linear()
 			.domain([0, d3.max(nest.map(function(d){return d.values[0].values[1].waarde;}))])
 			.range([height, 0]);
 
+	// maak een xAs op basis van de xSchaal
 	var xAxis = d3.svg.axis()
 			.scale(xScale)
 			.orient('bottom');
 
+	// maak een yAs op basis van de ySchaal
 	var yAxis = d3.svg.axis()
 			.scale(yScale)
 			.orient('left')
 			.ticks(11);
 
+	// teken de bars
 	g.selectAll('.bar')
 		.data(nest)
 		.enter().append('rect')
 			.attr('class', 'bar')
 			.attr('x', function(d) {return xScale(d.key)+5;})
-			.attr('y', function(d) {return height - yScale(d.values[0].values[1].waarde); })
+			.attr('y', function(d) {return yScale(d.values[0].values[1].waarde); })
 			.attr('width', xScale.rangeBand()-10)
-			.attr('height', function(d) {return yScale(d.values[0].values[1].waarde);});
+			.attr('height', function(d) {return height-yScale(d.values[0].values[1].waarde);});
 	
+	// teken de xAs
 	g.append('g')
 		.attr('class', 'axis xAxis')
 		.attr('transform', 'translate(0,' + height + ')')
@@ -55,6 +63,7 @@ d3.json('https://spreadsheets.google.com/feeds/list/1kSvyHeiYbjXbDZIvX-rmXzQi-SQ
 		.attr('transform', 'rotate(90)')
 		.style('text-anchor', 'start');
 
+	// teken de yAs
 	g.append('g')
 		.attr('class', 'axis yAxis')
 		.attr('transform', 'translate(0,100)');
