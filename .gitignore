@@ -9,3 +9,5 @@ src/wg2_playground_scatter/*
 !src/wg2_playground_pie/readme.md
 !src/wg2_playground_line/readme.md
 !src/wg2_playground_scatter/readme.md
+src/wg3_voorbeeld_labels
+src/index.html
