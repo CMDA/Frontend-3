@@ -59,11 +59,7 @@ d3.json("cijfersDT1.json", function(error, data) {
       })
       .attr("dy", ".75em")
       .text(function(d) {
-<<<<<<< HEAD
-        return d.Voornaam;    //Here I can use d.keyName because the keyName doesnt contain any spaces
-=======
         return d.Studienummer;
->>>>>>> origin/master
       });
 
   var xAxis = d3.svg.axis()
@@ -97,10 +93,6 @@ d3.json("cijfersDT1.json", function(error, data) {
 
 function type(d) {
   console.log ("coercing to number: " + d["Eerste Mondeling"]);
-<<<<<<< HEAD
-  //console.log("result: " + )
-=======
->>>>>>> origin/master
   d["Eerste Mondeling"] = +d["Eerste Mondeling"]; // coerce to number
   return d;
 }
@@ -110,8 +102,4 @@ function cleanJSON(data){
     d["Eerste Mondeling"] = d["Eerste Mondeling"].replace(',', '.');
     d["Eerste Mondeling"] = d["Eerste Mondeling"].replace('GR', '0');
   });
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/master
