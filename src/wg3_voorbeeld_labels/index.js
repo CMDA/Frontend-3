@@ -25,11 +25,11 @@ var chart = d3.select(".chart")
 
 d3.json("cijfersDT1.json", function(error, data) {
   //First clean the JSON (, -> . and GR -> 0)
-  cleanJSON(data); 
+  cleanJSON(data);
   console.log("loaded data");
   console.table(data);
-  
-  x.domain(data.map(function(d) { return d["Studienummer"]}));  //Use d['keyname'] instead of d.keyName when keyName has spaces
+
+  x.domain(data.map(function(d) { return d["Studienummer"]}));
   console.log(x.domain());
   y.domain([0, 10]);  //Not using D3 max because this way we can still inspire students to get a 10 ;)
 
@@ -59,7 +59,11 @@ d3.json("cijfersDT1.json", function(error, data) {
       })
       .attr("dy", ".75em")
       .text(function(d) {
+<<<<<<< HEAD
         return d.Voornaam;    //Here I can use d.keyName because the keyName doesnt contain any spaces
+=======
+        return d.Studienummer;
+>>>>>>> origin/master
       });
 
   var xAxis = d3.svg.axis()
@@ -93,7 +97,10 @@ d3.json("cijfersDT1.json", function(error, data) {
 
 function type(d) {
   console.log ("coercing to number: " + d["Eerste Mondeling"]);
+<<<<<<< HEAD
   //console.log("result: " + )
+=======
+>>>>>>> origin/master
   d["Eerste Mondeling"] = +d["Eerste Mondeling"]; // coerce to number
   return d;
 }
@@ -103,4 +110,8 @@ function cleanJSON(data){
     d["Eerste Mondeling"] = d["Eerste Mondeling"].replace(',', '.');
     d["Eerste Mondeling"] = d["Eerste Mondeling"].replace('GR', '0');
   });
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/master

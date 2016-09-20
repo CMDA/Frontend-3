@@ -18,7 +18,7 @@ p {
 }
 /* Let op, color werkt hier niet want svg text */
 .chart .barLabels{
-	fill: white;		
+	fill: white;
 	font: 10px sans-serif;
 	text-anchor: middle;
 }
@@ -37,4 +37,8 @@ p {
 }
 .axis .tick line {
   display:none;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/master
