@@ -27,7 +27,10 @@ var tree = h('header', [
       return stats.isDirectory() && basename !== 'data';
     })
     .map(function (basename) {
-      return h('li', h('a', {href: basename + '/index.html'}, basename));
+      return h('li', [
+        h('a', {href: basename}, basename),
+        {type: 'text', value: '\n'}
+      ]);
     }))
   )
 ])
