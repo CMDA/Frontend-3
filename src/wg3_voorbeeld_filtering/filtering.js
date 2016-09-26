@@ -23,7 +23,7 @@ d3.json('https://spreadsheets.google.com/feeds/list/1kSvyHeiYbjXbDZIvX-rmXzQi-SQ
             return d.perioden;
         })
         // .key(function(d){return d.onderwijssoort;}) // je kunt meer dan 1 dimensie nesten, maar de berekening wordt dan per dimensie ingewikkelder
-        // .key(function(d){return d.diploma})
+        .key(function(d){return d.diploma;})
         .entries(data);
 
     // even checken hoe de geneste data er uit ziet
