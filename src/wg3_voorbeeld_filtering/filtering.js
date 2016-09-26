@@ -27,7 +27,7 @@ d3.json('https://spreadsheets.google.com/feeds/list/1kSvyHeiYbjXbDZIvX-rmXzQi-SQ
         .entries(data);
 
     // even checken hoe de geneste data er uit ziet
-    // console.log(nest);
+    console.log(nest);
 
     // Filteren op de diplomasoorten die we willen plotten
     nest = nest.map(function(d){ // map neemt een array, trekt over elke waarde een functie en returned een array met dezelfde lengte.
