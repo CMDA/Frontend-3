@@ -6,7 +6,7 @@ var svg = d3.select('main').append('svg').attr('width', 900).attr('height', 600)
     height = +svg.attr('height') - margin.top - margin.bottom;
 
 d3.json('https://spreadsheets.google.com/feeds/list/1kSvyHeiYbjXbDZIvX-rmXzQi-SQY4z4MSA-R4QVpI0Y/od6/public/values?alt=json', function(data){
-    
+
     // even checken hoe de data eruit ziet
     // console.log(data);
 
@@ -110,7 +110,7 @@ d3.json('https://spreadsheets.google.com/feeds/list/1kSvyHeiYbjXbDZIvX-rmXzQi-SQ
 //-------//
 // ASSEN //
 //-------//
-    
+
     // maak een xAs op basis van de jaarSchaal
     var yearAxis = d3.svg.axis()
         .scale(yearScale)
@@ -143,13 +143,13 @@ d3.json('https://spreadsheets.google.com/feeds/list/1kSvyHeiYbjXbDZIvX-rmXzQi-SQ
 //-----------------//
 // TITEL & LEGENDA //
 //-----------------//
-    
+
     // voeg een group voor de titel toe
     var title = g.append('text')
         .attr('class', 'title')
         .attr('x', 150)
         .attr('y', 10)
-        .text('Invoer Bachelor/Master structuur')
+        .text('Invoer Bachelor/Master structuur');
 
     // voeg een group voor de legenda toe
     var legend = g.selectAll('.legend')
