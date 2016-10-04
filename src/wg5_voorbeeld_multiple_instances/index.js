@@ -2,7 +2,7 @@
 var margin = {top: 10, right: 10, bottom: 10, left: 25};
 
 d3.tsv('index.tsv', cleanBarchart, drawBarchart);
-d3.csv('data.csv', drawPiechart);
+d3.csv('data.csv', cleanPiechart, drawPiechart);
 
 function cleanBarchart(d) {
   return {
@@ -65,6 +65,13 @@ function drawBarchart(err, data) {
       .attr('y', function (d) { return yScale(d.mark); })
       .attr('height', function (d) { return rect.height - yScale(d.mark); });
   }
+}
+
+function cleanPiechart(d) {
+  return {
+    age: d.age,
+    population: Number(d.population) || 0
+  };
 }
 
 function drawPiechart (err, data) {
